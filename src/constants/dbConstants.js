@@ -1,0 +1,28 @@
+const statColumns = [
+  "Last",
+  "First",
+  "PA",
+  "AB",
+  "H",
+  "1B",
+  "2B",
+  "3B",
+  "HR",
+  "RBI",
+  "R",
+  "HBP",
+  "ROE",
+  "FC",
+  "CI",
+  "BB",
+  "SO",
+  "SB",
+  "TB",
+  "SAC",
+  "SF",
+  "2OUTRBI",
+  "HEADS UP",
+  "Bases/PA",
+];
+
+export default statColumns;

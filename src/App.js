@@ -5,7 +5,7 @@ import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import queryClient from "./queryClient/queryClient";
 import ProtectedRoute from "./components/basic/ProtectedRoute";
-import Home from "./components/views/Home";
+import Leaderboard from "./components/views/Leaderboard";
 import PlayerView from "./components/views/PlayerView";
 import SingleGame from "./components/views/SingleGame";
 import AddGame from "./components/views/AddGame";
@@ -18,7 +18,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<AppContainer />}>
-            <Route index element={<Home />} />
+            <Route index element={<Leaderboard />} />
             <Route path="players/:id" element={<PlayerView />} />
             <Route path="games" element={<GameList />} />
             <Route path="games/:gameId" element={<SingleGame />} />

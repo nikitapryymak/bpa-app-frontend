@@ -1,7 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
 import BPATable from "../BPATable";
 
-const Home = () => {
+const Leaderboard = () => {
   return (
     <Box>
       <Heading color="gray.100" mb="2rem">
@@ -11,4 +11,4 @@ const Home = () => {
     </Box>
   );
 };
-export default Home;
+export default Leaderboard;

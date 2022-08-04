@@ -3,10 +3,11 @@ import { Box, Container, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import useDeleteGame from "../../hooks/useDeleteGame";
 import useGames from "../../hooks/useGames";
-import { getGameDate } from "../../utils/utils";
+import { getGameDate, isAuthed } from "../../utils/utils";
 import CardSkeleton from "../skeletons/CardSkeleton";
 
 const GameList = () => {
+  const authed = isAuthed();
   const { data: games = [], isLoading, isError } = useGames();
   const navigate = useNavigate();
 
@@ -49,14 +50,16 @@ const GameList = () => {
             <Text color="orange.300" fontSize="md" fontWeight="bold">
               vs {game.opponent}
             </Text>
-            <DeleteIcon
-              ml="auto"
-              color="gray.700"
-              cursor="pointer"
-              zIndex={1}
-              _hover={{ color: "red.400" }}
-              onClick={handleDelete(game.gameId)}
-            />
+            {authed && (
+              <DeleteIcon
+                ml="auto"
+                color="gray.700"
+                cursor="pointer"
+                zIndex={1}
+                _hover={{ color: "red.400" }}
+                onClick={handleDelete(game.gameId)}
+              />
+            )}
           </Flex>
           <Text as="span" color="gray.500">
             {game.title}

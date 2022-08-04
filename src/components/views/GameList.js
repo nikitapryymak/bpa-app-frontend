@@ -1,5 +1,7 @@
-import { Box, Container, HStack, Text } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
+import { Box, Container, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import useDeleteGame from "../../hooks/useDeleteGame";
 import useGames from "../../hooks/useGames";
 import { getGameDate } from "../../utils/utils";
 import CardSkeleton from "../skeletons/CardSkeleton";
@@ -7,6 +9,13 @@ import CardSkeleton from "../skeletons/CardSkeleton";
 const GameList = () => {
   const { data: games = [], isLoading, isError } = useGames();
   const navigate = useNavigate();
+
+  const { mutate: removeGame } = useDeleteGame();
+
+  const handleDelete = (id) => async (e) => {
+    e.stopPropagation();
+    removeGame(id);
+  };
 
   return isLoading ? (
     <Container>
@@ -33,12 +42,22 @@ const GameList = () => {
             navigate(`/games/${game.gameId}`, { state: { goBack: true } })
           }
         >
-          <HStack mb=".5rem">
-            <Text fontWeight="bold">{getGameDate(new Date(game.date))}</Text>
+          <Flex mb=".5rem" align="center">
+            <Text mr=".5rem" fontWeight="bold">
+              {getGameDate(new Date(game.date))}
+            </Text>
             <Text color="orange.300" fontSize="md" fontWeight="bold">
               vs {game.opponent}
             </Text>
-          </HStack>
+            <DeleteIcon
+              ml="auto"
+              color="gray.700"
+              cursor="pointer"
+              zIndex={1}
+              _hover={{ color: "red.400" }}
+              onClick={handleDelete(game.gameId)}
+            />
+          </Flex>
           <Text as="span" color="gray.500">
             {game.title}
           </Text>

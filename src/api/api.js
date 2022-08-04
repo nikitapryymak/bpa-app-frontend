@@ -60,3 +60,15 @@ export const sendGameCSVData = async (data) =>
     .catch(({ response: { status, data } }) =>
       Promise.reject({ status, ...data })
     );
+
+export const deleteGame = async (gameId) =>
+  axiosClient
+    .delete(`/games/${gameId}`, {
+      headers: {
+        "admin-key": getAdminKey(),
+      },
+    })
+    .then(({ data }) => data)
+    .catch(({ response: { status, data } }) =>
+      Promise.reject({ status, ...data })
+    );

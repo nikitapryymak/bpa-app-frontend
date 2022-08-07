@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import statColumns from "../../constants/dbConstants";
+import showMobile from "../../constants/tables";
 import usePlayerInfo from "../../hooks/usePlayerInfo";
 import { getColorByBPA, getGameDate } from "../../utils/utils";
 import InfoSkeleton from "../skeletons/InfoSkeleton";
@@ -71,12 +72,18 @@ const PlayerView = () => {
             th: {
               color: "orange.300",
             },
+            ".hide-mobile": {
+              display: ["none", "none", "table-cell"],
+            },
           }}
         >
           <Thead>
             <Tr>
               {statColumns.map((column) => (
-                <Th key={column}>
+                <Th
+                  className={showMobile[column] ? "" : "hide-mobile"}
+                  key={column}
+                >
                   {/* replace these stat columns with other fields */}
                   {column === "Last"
                     ? "date"
@@ -104,27 +111,27 @@ const PlayerView = () => {
               >
                 <Td fontWeight="bold">{getGameDate(new Date(game.date))}</Td>
                 <Td>{game.opponent}</Td>
-                <Td>{game.PA}</Td>
-                <Td>{game.AB}</Td>
-                <Td>{game.H}</Td>
-                <Td>{game["1B"]}</Td>
-                <Td>{game["2B"]}</Td>
-                <Td>{game["3B"]}</Td>
-                <Td>{game.HR}</Td>
-                <Td>{game.RBI}</Td>
-                <Td>{game.R}</Td>
-                <Td>{game.HBP}</Td>
-                <Td>{game.ROE}</Td>
-                <Td>{game.FC}</Td>
-                <Td>{game.CI}</Td>
-                <Td>{game.BB}</Td>
-                <Td>{game.SO}</Td>
-                <Td>{game.SB}</Td>
-                <Td>{game.TB}</Td>
-                <Td>{game.SAC}</Td>
-                <Td>{game.SF}</Td>
-                <Td>{game["2OUTRBI"]}</Td>
-                <Td>{game.HEADSUP}</Td>
+                <Td className="hide-mobile">{game.PA}</Td>
+                <Td className="hide-mobile">{game.AB}</Td>
+                <Td className="hide-mobile">{game.H}</Td>
+                <Td className="hide-mobile">{game["1B"]}</Td>
+                <Td className="hide-mobile">{game["2B"]}</Td>
+                <Td className="hide-mobile">{game["3B"]}</Td>
+                <Td className="hide-mobile">{game.HR}</Td>
+                <Td className="hide-mobile">{game.RBI}</Td>
+                <Td className="hide-mobile">{game.R}</Td>
+                <Td className="hide-mobile">{game.HBP}</Td>
+                <Td className="hide-mobile">{game.ROE}</Td>
+                <Td className="hide-mobile">{game.FC}</Td>
+                <Td className="hide-mobile">{game.CI}</Td>
+                <Td className="hide-mobile">{game.BB}</Td>
+                <Td className="hide-mobile">{game.SO}</Td>
+                <Td className="hide-mobile">{game.SB}</Td>
+                <Td className="hide-mobile">{game.TB}</Td>
+                <Td className="hide-mobile">{game.SAC}</Td>
+                <Td className="hide-mobile">{game.SF}</Td>
+                <Td className="hide-mobile">{game["2OUTRBI"]}</Td>
+                <Td className="hide-mobile">{game.HEADSUP}</Td>
                 <Td
                   bg={getColorByBPA(game.BPA)}
                   color="gray.800"

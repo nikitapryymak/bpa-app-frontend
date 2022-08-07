@@ -16,6 +16,7 @@ import CrownIcon from "./basic/CrownIcon";
 import TableSkeleton from "./skeletons/TableSkeleton";
 import useLeaderboard from "../hooks/useLeaderboard";
 import statColumns from "../constants/dbConstants";
+import showMobile from "../constants/tables";
 
 const BPATable = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const BPATable = () => {
   ) : isError ? (
     <Text color="red.300">Failed to load leaderboard</Text>
   ) : (
-    <Container w="96vw" maxWidth="1300px">
+    <Container w="100%" maxWidth="1300px" p="0">
       <TableContainer
         p=".25rem 0 0"
         border="1px"
@@ -44,12 +45,20 @@ const BPATable = () => {
             th: {
               color: "orange.300",
             },
+            ".hide-mobile": {
+              display: ["none", "none", "table-cell"],
+            },
           }}
         >
           <Thead>
             <Tr>
               {statColumns.map((heading) => (
-                <Th key={heading}>{heading}</Th>
+                <Th
+                  className={showMobile[heading] ? "" : "hide-mobile"}
+                  key={heading}
+                >
+                  {heading}
+                </Th>
               ))}
             </Tr>
           </Thead>
@@ -80,27 +89,27 @@ const BPATable = () => {
                   </Flex>
                 </Td>
                 <Td fontWeight="bold">{player.First}</Td>
-                <Td>{player.PA}</Td>
-                <Td>{player.AB}</Td>
-                <Td>{player.H}</Td>
-                <Td>{player["1B"]}</Td>
-                <Td>{player["2B"]}</Td>
-                <Td>{player["3B"]}</Td>
-                <Td>{player.HR}</Td>
-                <Td>{player.RBI}</Td>
-                <Td>{player.R}</Td>
-                <Td>{player.HBP}</Td>
-                <Td>{player.ROE}</Td>
-                <Td>{player.FC}</Td>
-                <Td>{player.CI}</Td>
-                <Td>{player.BB}</Td>
-                <Td>{player.SO}</Td>
-                <Td>{player.SB}</Td>
-                <Td>{player.TB}</Td>
-                <Td>{player.SAC}</Td>
-                <Td>{player.SF}</Td>
-                <Td>{player["2OUTRBI"]}</Td>
-                <Td>{player.HEADSUP}</Td>
+                <Td className="hide-mobile">{player.PA}</Td>
+                <Td className="hide-mobile">{player.AB}</Td>
+                <Td className="hide-mobile">{player.H}</Td>
+                <Td className="hide-mobile">{player["1B"]}</Td>
+                <Td className="hide-mobile">{player["2B"]}</Td>
+                <Td className="hide-mobile">{player["3B"]}</Td>
+                <Td className="hide-mobile">{player.HR}</Td>
+                <Td className="hide-mobile">{player.RBI}</Td>
+                <Td className="hide-mobile">{player.R}</Td>
+                <Td className="hide-mobile">{player.HBP}</Td>
+                <Td className="hide-mobile">{player.ROE}</Td>
+                <Td className="hide-mobile">{player.FC}</Td>
+                <Td className="hide-mobile">{player.CI}</Td>
+                <Td className="hide-mobile">{player.BB}</Td>
+                <Td className="hide-mobile">{player.SO}</Td>
+                <Td className="hide-mobile">{player.SB}</Td>
+                <Td className="hide-mobile">{player.TB}</Td>
+                <Td className="hide-mobile">{player.SAC}</Td>
+                <Td className="hide-mobile">{player.SF}</Td>
+                <Td className="hide-mobile">{player["2OUTRBI"]}</Td>
+                <Td className="hide-mobile">{player.HEADSUP}</Td>
                 <Td
                   bg={getColorByBPA(player.BPA)}
                   color="gray.800"

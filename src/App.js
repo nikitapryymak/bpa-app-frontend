@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { ChakraProvider, theme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import queryClient from "./queryClient/queryClient";
+import theme from "./config/theme";
 import ProtectedRoute from "./components/basic/ProtectedRoute";
 import Leaderboard from "./components/views/Leaderboard";
 import PlayerView from "./components/views/PlayerView";

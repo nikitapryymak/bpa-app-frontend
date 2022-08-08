@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "react-query";
 import csv from "csvtojson";
 import { getPlayers, sendGameCSVData } from "../api/api";
 import csvConfig from "../config/csvConfig";
-import { PLAYERS } from "../constants/queryKeys";
+import { PLAYERS, RECENT_OPPONENTS } from "../constants/queryKeys";
 import { findPlayerIdByName, getBPA } from "../utils/utils";
 
 const useAddGame = (opts = {}) => {
@@ -37,6 +37,7 @@ const useAddGame = (opts = {}) => {
           duration: 2500,
           position: "bottom-left",
         });
+        await queryClient.invalidateQueries([RECENT_OPPONENTS]);
       },
       onError: async () => {
         toast({

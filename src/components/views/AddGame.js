@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
 import useAddGame from "../../hooks/useAddGame";
+import RecentOpponents from "../RecentOpponents";
 
 const AddGame = () => {
   const fileInputRef = useRef();
@@ -91,6 +92,7 @@ const AddGame = () => {
           }
         />
       </FormControl>
+      <RecentOpponents setGameInfo={setGameInfo} />
       <FormControl isRequired mt="1.5rem">
         <FormLabel>Game Title</FormLabel>
         <Input

@@ -30,7 +30,7 @@ const SingleGame = () => {
   return isLoading ? (
     <InfoSkeleton />
   ) : isError ? (
-    <Text mt="4rem" color="red.300">
+    <Text mt="4rem" color="brand.red">
       Failed to load game
     </Text>
   ) : (
@@ -39,17 +39,17 @@ const SingleGame = () => {
         mb=".6em"
         boxSize="1.5em"
         cursor="pointer"
-        _hover={{ color: "blue.300" }}
+        _hover={{ color: "brand.blue" }}
         onClick={() => navigate(goBack ? -1 : "/")}
       />
-      <Heading size="lg" color="gray.100" mb="1rem">
+      <Heading size="lg" color="brand.headingText" mb="1rem">
         {gameInfo.title}
       </Heading>
       <HStack mb="1em">
-        <Text color="gray.500" fontWeight="bold">
+        <Text color="brand.bodyText" fontWeight="bold">
           {getGameDate(new Date(gameInfo.date))}
         </Text>
-        <Text color="orange.300" fontSize="md" fontWeight="bold">
+        <Text color="brand.orange" fontSize="md" fontWeight="bold">
           vs {gameInfo.opponent}
         </Text>
       </HStack>
@@ -57,7 +57,7 @@ const SingleGame = () => {
         p=".25rem 0 0"
         border="1px"
         borderRadius="4px"
-        borderColor="blue.300"
+        borderColor="brand.blue"
       >
         <Table
           size="sm"
@@ -68,7 +68,7 @@ const SingleGame = () => {
               textAlign: "center",
             },
             th: {
-              color: "orange.300",
+              color: "brand.orange",
             },
             ".hide-mobile": {
               display: ["none", "none", "table-cell"],
@@ -90,7 +90,7 @@ const SingleGame = () => {
           <Tbody>
             {gameInfo.stats.map((player) => (
               <Tr
-                color="gray.300"
+                color="brand.tableText"
                 key={player.playerId}
                 onClick={() =>
                   navigate(`/players/${player.playerId}`, {
@@ -98,7 +98,7 @@ const SingleGame = () => {
                   })
                 }
                 _hover={{
-                  bg: "gray.700",
+                  bg: "brand.hoverBg",
                   cursor: "pointer",
                 }}
               >
@@ -127,7 +127,7 @@ const SingleGame = () => {
                 <Td className="hide-mobile">{player.HEADSUP}</Td>
                 <Td
                   bg={getColorByBPA(player.BPA)}
-                  color="gray.800"
+                  color="brand.bg"
                   fontWeight={600}
                 >
                   {player.BPA}

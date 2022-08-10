@@ -21,10 +21,10 @@ const RecentOpponents = ({ setGameInfo }) => {
     <Box w="100%">
       {!showRecents && (
         <Text
-          color="gray.500"
+          color="brand.bodyText"
           mt=".5em"
           cursor="pointer"
-          _hover={{ color: "orange.300" }}
+          _hover={{ color: "brand.orange" }}
           onClick={() => setShowRecents(true)}
         >
           Show Recents
@@ -35,7 +35,7 @@ const RecentOpponents = ({ setGameInfo }) => {
           {isLoading ? (
             <LoadingSpinner mt="1.75em" />
           ) : isError ? (
-            <Text color="red.300" mt=".75em">
+            <Text color="brand.red" mt=".75em">
               Failed to load recent opponents
             </Text>
           ) : (
@@ -44,10 +44,10 @@ const RecentOpponents = ({ setGameInfo }) => {
                 <ListItem
                   key={opponent}
                   border="1px solid"
-                  borderColor="gray.700"
+                  borderColor="brand.hoverBg"
                   p=".25em"
                   cursor="pointer"
-                  _hover={{ bg: "gray.700" }}
+                  _hover={{ bg: "brand.hoverBg" }}
                   onClick={initSetGameInfo(opponent)}
                 >
                   {opponent}

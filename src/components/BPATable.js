@@ -25,14 +25,14 @@ const BPATable = () => {
   return isLoading ? (
     <TableSkeleton />
   ) : isError ? (
-    <Text color="red.300">Failed to load leaderboard</Text>
+    <Text color="brand.red">Failed to load leaderboard</Text>
   ) : (
     <Container w="100%" maxWidth="1300px" p="0">
       <TableContainer
         p=".25rem 0 0"
         border="1px"
         borderRadius="4px"
-        borderColor="blue.300"
+        borderColor="brand.blue"
       >
         <Table
           size="sm"
@@ -43,7 +43,7 @@ const BPATable = () => {
               textAlign: "center",
             },
             th: {
-              color: "orange.300",
+              color: "brand.orange",
             },
             ".hide-mobile": {
               display: ["none", "none", "table-cell"],
@@ -65,7 +65,7 @@ const BPATable = () => {
           <Tbody>
             {leaderboard.map((player, i) => (
               <Tr
-                color="gray.300"
+                color="brand.tableText"
                 key={player.playerId}
                 onClick={() =>
                   navigate(`players/${player.playerId}`, {
@@ -73,7 +73,7 @@ const BPATable = () => {
                   })
                 }
                 _hover={{
-                  bg: "gray.700",
+                  bg: "brand.hoverBg",
                   cursor: "pointer",
                 }}
                 _last={{
@@ -112,7 +112,7 @@ const BPATable = () => {
                 <Td className="hide-mobile">{player.HEADSUP}</Td>
                 <Td
                   bg={getColorByBPA(player.BPA)}
-                  color="gray.800"
+                  color="brand.bg"
                   fontWeight={600}
                 >
                   {player.BPA}

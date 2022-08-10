@@ -10,7 +10,7 @@ const SearchInput = ({ search, setSearch, ...props }) => {
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
         />
-        <InputRightElement children={<SearchIcon color="blue.300" />} />
+        <InputRightElement children={<SearchIcon color="brand.blue" />} />
       </InputGroup>
     </Box>
   );

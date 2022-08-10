@@ -10,7 +10,7 @@ const AddGameIcon = () => {
       top="1rem"
       right="1rem"
       cursor="pointer"
-      color="green.300"
+      color="brand.green"
       _hover={{ color: "green.500" }}
       onClick={() => navigate("/add-game")}
     />

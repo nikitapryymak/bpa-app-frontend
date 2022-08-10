@@ -3,8 +3,8 @@ import { CircularProgress } from "@chakra-ui/react";
 const LoadingSpinner = (props) => {
   return (
     <CircularProgress
-      trackColor="gray.700"
-      color="green.300"
+      trackColor="brand.hoverBg"
+      color="brand.green"
       size={7}
       thickness={10}
       isIndeterminate

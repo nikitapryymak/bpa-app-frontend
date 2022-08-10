@@ -10,6 +10,7 @@ const Navbar = () => {
       dir="row"
       spacing={6}
       justifyContent="center"
+      color="brand.bodyText"
       fontSize="2xl"
       mb="1.25rem"
     >
@@ -18,17 +19,15 @@ const Navbar = () => {
       </ChakraNavLink>
       <ChakraNavLink
         to="/"
-        color="gray.500"
-        _hover={{ color: "gray.400" }}
-        _activeLink={{ color: "blue.300" }}
+        _hover={{ color: "brand.bodyTextHover" }}
+        _activeLink={{ color: "brand.blue" }}
       >
         Leaderboard
       </ChakraNavLink>
       <ChakraNavLink
         to="/games"
-        color="gray.500"
-        _hover={{ color: "gray.400" }}
-        _activeLink={{ color: "blue.300" }}
+        _hover={{ color: "brand.bodyTextHover" }}
+        _activeLink={{ color: "brand.blue" }}
         end
       >
         Games

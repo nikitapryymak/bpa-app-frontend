@@ -27,7 +27,7 @@ const GameList = () => {
     </Container>
   ) : isError ? (
     <Container>
-      <Text color="red.300">Failed to load player</Text>
+      <Text color="brand.red">Failed to load player</Text>
     </Container>
   ) : (
     <Container>
@@ -45,12 +45,12 @@ const GameList = () => {
             key={game.gameId}
             textAlign="left"
             borderWidth="2px"
-            borderColor="gray.700"
+            borderColor="brand.hoverBg"
             borderRadius="lg"
             p="1rem"
             mb="1.2rem"
             cursor="pointer"
-            _hover={{ bg: "gray.900" }}
+            _hover={{ bg: "brand.hoverBgDark" }}
             onClick={() =>
               navigate(`/games/${game.gameId}`, { state: { goBack: true } })
             }
@@ -59,13 +59,13 @@ const GameList = () => {
               <Text mr=".5rem" fontWeight="bold">
                 {getGameDate(new Date(game.date))}
               </Text>
-              <Text color="orange.300" fontSize="md" fontWeight="bold">
+              <Text color="brand.orange" fontSize="md" fontWeight="bold">
                 vs {game.opponent}
               </Text>
               {authed && (
                 <DeleteIcon
                   ml="auto"
-                  color="gray.700"
+                  color="brand.hoverBg"
                   cursor="pointer"
                   zIndex={1}
                   _hover={{ color: "red.400" }}
@@ -73,7 +73,7 @@ const GameList = () => {
                 />
               )}
             </Flex>
-            <Text as="span" color="gray.500">
+            <Text as="span" color="brand.bodyText">
               {game.title}
             </Text>
           </Box>

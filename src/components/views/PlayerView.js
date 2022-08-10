@@ -36,30 +36,30 @@ const PlayerView = () => {
   return isLoading ? (
     <InfoSkeleton />
   ) : isError ? (
-    <Text color="red.300">Failed to load player</Text>
+    <Text color="brand.red">Failed to load player</Text>
   ) : (
     <Container maxWidth="1300px" align="left">
       <ArrowBackIcon
         mb=".6em"
         boxSize="1.5em"
         cursor="pointer"
-        _hover={{ color: "blue.300" }}
+        _hover={{ color: "brand.blue" }}
         onClick={() => navigate(goBack ? -1 : "/")}
       />
-      <Heading size="lg" color="gray.100" mb="1rem">
+      <Heading size="lg" color="brand.headingText" mb="1rem">
         {firstName} {lastName}
-        <Text as="span" ml="1rem" color="blue.300">
+        <Text as="span" ml="1rem" color="brand.blue">
           #{number}
         </Text>
       </Heading>
-      <Text mb="1em" color="gray.500" fontWeight="bold">
+      <Text mb="1em" color="brand.bodyText" fontWeight="bold">
         Recent Games
       </Text>
       <TableContainer
         p=".25rem 0 0"
         border="1px"
         borderRadius="4px"
-        borderColor="blue.300"
+        borderColor="brand.blue"
       >
         <Table
           size="sm"
@@ -70,7 +70,7 @@ const PlayerView = () => {
               textAlign: "center",
             },
             th: {
-              color: "orange.300",
+              color: "brand.orange",
             },
             ".hide-mobile": {
               display: ["none", "none", "table-cell"],
@@ -97,7 +97,7 @@ const PlayerView = () => {
           <Tbody>
             {stats.map((game, i) => (
               <Tr
-                color="gray.300"
+                color="brand.tableText"
                 key={i}
                 onClick={() =>
                   navigate(`/games/${game.gameId}`, {
@@ -105,7 +105,7 @@ const PlayerView = () => {
                   })
                 }
                 _hover={{
-                  bg: "gray.700",
+                  bg: "brand.hoverBg",
                   cursor: "pointer",
                 }}
               >
@@ -134,7 +134,7 @@ const PlayerView = () => {
                 <Td className="hide-mobile">{game.HEADSUP}</Td>
                 <Td
                   bg={getColorByBPA(game.BPA)}
-                  color="gray.800"
+                  color="brand.bg"
                   fontWeight={600}
                 >
                   {game.BPA}

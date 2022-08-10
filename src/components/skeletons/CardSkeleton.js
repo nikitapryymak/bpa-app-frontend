@@ -6,7 +6,7 @@ const CardSkeleton = ({ cards = 1 }) => {
     .map((_, i) => (
       <Stack
         borderWidth="2px"
-        borderColor="gray.700"
+        borderColor="brand.hoverBg"
         borderRadius="lg"
         p="1rem"
         mb="1rem"

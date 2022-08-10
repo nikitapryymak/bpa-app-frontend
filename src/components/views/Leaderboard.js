@@ -4,7 +4,7 @@ import BPATable from "../BPATable";
 const Leaderboard = () => {
   return (
     <Box>
-      <Heading color="gray.100" mb="2rem">
+      <Heading color="brand.headingText" mb="2rem">
         BASES PER PLATE APPEARANCE
       </Heading>
       <BPATable />

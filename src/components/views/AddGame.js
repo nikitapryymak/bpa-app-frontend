@@ -69,7 +69,7 @@ const AddGame = () => {
         onChange={onChange}
       />
       {fileError && (
-        <Text color="red.300" mt=".75rem">
+        <Text color="brand.red" mt=".75rem">
           {fileError}
         </Text>
       )}
@@ -110,7 +110,7 @@ const AddGame = () => {
         disabled={!fileContents || fileError || !opponent || !title}
         isLoading={isLoading}
         variant="solid"
-        color="green.300"
+        color="brand.green"
         size="lg"
         mt="1.25rem"
         onClick={() =>
@@ -128,8 +128,8 @@ const AddGame = () => {
       {error?.type === "ValidationError" && error?.details && (
         <List spacing={3}>
           {error.details.map(({ message }, i) => (
-            <ListItem color="red.300" mt=".75rem" key={i}>
-              <ListIcon as={WarningIcon} color="red.300" />
+            <ListItem color="brand.red" mt=".75rem" key={i}>
+              <ListIcon as={WarningIcon} color="brand.red" />
               {message}
             </ListItem>
           ))}

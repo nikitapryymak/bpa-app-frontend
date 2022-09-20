@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "CGCC Bases per Plate Appearrance",
+  "name": "App for CGCC to track stats and games",
   "icons": [
     {
       "src": "favicon.ico",

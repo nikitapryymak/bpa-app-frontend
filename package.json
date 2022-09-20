@@ -19,7 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "aws s3 sync build/ s3://bpa.showitdev-nikita.com",
+    "deploy": "aws s3 sync build/ s3://$BUCKET",
+    "invalidate-cache": "aws cloudfront create-invalidation --distribution-id $ID --paths '/*' --no-cli-pager",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

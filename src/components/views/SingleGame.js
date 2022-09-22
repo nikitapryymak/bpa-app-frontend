@@ -34,7 +34,7 @@ const SingleGame = () => {
       Failed to load game
     </Text>
   ) : (
-    <Container maxWidth="1300px" align="left">
+    <Container maxWidth="1300px" align="left" mb="2rem">
       <ArrowBackIcon
         mb=".6em"
         boxSize="1.5em"

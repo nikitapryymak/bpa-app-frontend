@@ -27,7 +27,7 @@ const BPATable = () => {
   ) : isError ? (
     <Text color="brand.red">Failed to load leaderboard</Text>
   ) : (
-    <Container w="100%" maxWidth="1300px" p="0">
+    <Container w="100%" maxWidth="1300px" p="0" mb="5rem">
       <TableContainer
         p=".25rem 0 0"
         border="1px"
